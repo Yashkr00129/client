@@ -137,23 +137,23 @@ const data = {
 			],
 		},
 	],
-	projects: [
-		{
-			name: "Design Engineering",
-			url: "#",
-			icon: Frame,
-		},
-		{
-			name: "Sales & Marketing",
-			url: "#",
-			icon: PieChart,
-		},
-		{
-			name: "Travel",
-			url: "#",
-			icon: Map,
-		},
-	],
+	// projects: [
+	// 	{
+	// 		name: "Design Engineering",
+	// 		url: "#",
+	// 		icon: Frame,
+	// 	},
+	// 	{
+	// 		name: "Sales & Marketing",
+	// 		url: "#",
+	// 		icon: PieChart,
+	// 	},
+	// 	{
+	// 		name: "Travel",
+	// 		url: "#",
+	// 		icon: Map,
+	// 	},
+	// ],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -166,7 +166,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			</SidebarHeader>
 			<SidebarContent>
 				<NavMain items={data.navMain} />
-				<NavProjects projects={data.projects} />
+				{/* <NavProjects projects={data.projects} /> */}
 			</SidebarContent>
 			<SidebarFooter>
 				<NavUser user={data.user} />
