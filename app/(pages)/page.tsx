@@ -412,7 +412,7 @@ const ReceiptManagementPage = () => {
 								<ReceiptUploader />
 								{/* </div> */}
 
-								<Card>
+								{/* <Card>
 									<CardHeader>
 										<CardTitle>Recent Uploads</CardTitle>
 										<CardDescription>
@@ -471,7 +471,7 @@ const ReceiptManagementPage = () => {
 											</table>
 										</div>
 									</CardContent>
-								</Card>
+								</Card> */}
 							</>
 						)}
 
