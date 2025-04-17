@@ -6,7 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 		<>
 			<SidebarProvider>
 				<AppSidebar />
-				<main className="bg-gray-50">
+				<main className="bg-gray-50 flex-1">
 					<SidebarTrigger />
 					{children}
 				</main>
