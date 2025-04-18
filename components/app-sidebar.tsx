@@ -60,7 +60,7 @@ const data = {
 				},
 				{
 					title: "Transactions History",
-					url: "/transactions-history",
+					url: "/transaction-history",
 				},
 			],
 		},
