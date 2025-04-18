@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FileText } from "lucide-react";
+import { baseURL } from "@/config";
 
 interface Transaction {
 	transaction_id: string;
@@ -32,7 +33,7 @@ const TransactionsPage = () => {
 		setLoading(true);
 		setError(null);
 		try {
-			const res = await fetch("http://localhost:8000/transactions/");
+			const res = await fetch(baseURL + "/transactions/");
 			if (!res.ok) {
 				throw new Error(`Error fetching transactions: ${res.statusText}`);
 			}

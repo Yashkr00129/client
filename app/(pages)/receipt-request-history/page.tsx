@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Plus, FileText } from "lucide-react";
 import Link from "next/link";
+import { baseURL } from "@/config";
 
 interface Receipt {
 	request_id: string;
@@ -36,7 +37,7 @@ const ReceiptManagementPage = () => {
 		setLoading(true);
 		setError(null);
 		try {
-			const res = await fetch("http://localhost:8000/requests/");
+			const res = await fetch(baseURL + "/requests/");
 			if (!res.ok) {
 				throw new Error(`Error fetching receipts: ${res.statusText}`);
 			}

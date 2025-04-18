@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
+import { baseURL } from "@/config";
 
 // Define TypeScript interfaces for our data structures
 interface UploadResponse {
@@ -110,7 +111,7 @@ const ReceiptUploader: React.FC = () => {
 			}, 200);
 
 			// Upload to FastAPI backend
-			const response = await fetch("http://localhost:8000/upload-receipt/", {
+			const response = await fetch(baseURL + "/upload-receipt/", {
 				method: "POST",
 				body: formData,
 			});
@@ -144,9 +145,7 @@ const ReceiptUploader: React.FC = () => {
 	// Poll for receipt processing status
 	const pollForStatus = async (id: string): Promise<void> => {
 		try {
-			const response = await fetch(
-				`http://localhost:8000/receipt-status/${id}`
-			);
+			const response = await fetch(baseURL + `/receipt-status/${id}`);
 
 			if (!response.ok) {
 				throw new Error(`Status check failed: ${response.statusText}`);
