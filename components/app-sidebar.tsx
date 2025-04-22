@@ -12,6 +12,7 @@ import {
 	PieChart,
 	Settings2,
 	SquareTerminal,
+	File,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
@@ -42,7 +43,7 @@ const data = {
 	navMain: [
 		{
 			title: "Receipts & Transactions",
-			url: "#",
+			url: "/",
 			icon: BookOpen,
 			isActive: true,
 			items: [
@@ -64,25 +65,17 @@ const data = {
 				},
 			],
 		},
-		// {
-		// 	title: "Models",
-		// 	url: "#",
-		// 	icon: Bot,
-		// 	items: [
-		// 		{
-		// 			title: "Genesis",
-		// 			url: "#",
-		// 		},
-		// 		{
-		// 			title: "Explorer",
-		// 			url: "#",
-		// 		},
-		// 		{
-		// 			title: "Quantum",
-		// 			url: "#",
-		// 		},
-		// 	],
-		// },
+		{
+			title: "Standard Documents",
+			url: "/upload-standard-document",
+			icon: File,
+			items: [
+				{
+					title: "Upload Standard Document",
+					url: "/upload-standard-document",
+				},
+			],
+		},
 		// {
 		// 	title: "Documentation",
 		// 	url: "#",
