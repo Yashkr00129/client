@@ -41,7 +41,7 @@ const ReceiptManagementPage = () => {
 			const res = await ocrRequestApi.getAllOcrRequests();
 
 			setReceipts(
-				res.data.items.filter((item: any) => item.type === "receipt")
+				res.data.items.filter((item: any) => item.type === "standard_document")
 			);
 		} catch (err: any) {
 			setError(err.message || "Unknown error");
@@ -81,9 +81,9 @@ const ReceiptManagementPage = () => {
 							<>
 								<div className="flex items-center justify-between">
 									<h2 className="text-2xl font-bold text-gray-900">
-										Upload Receipt
+										Standard Document Request History
 									</h2>
-									<Link href={"/upload-receipt"}>
+									<Link href={"/upload-standard-document"}>
 										<Button size="sm">
 											<Plus className="h-4 w-4 mr-2" />
 											New Upload

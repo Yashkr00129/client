@@ -74,6 +74,14 @@ const data = {
 					title: "Upload Standard Document",
 					url: "/upload-standard-document",
 				},
+				{
+					title: "Medical Record History",
+					url: "/medical-record-history",
+				},
+				{
+					title: "Standard Document Request History",
+					url: "/standard-document-request-history",
+				},
 			],
 		},
 		// {
