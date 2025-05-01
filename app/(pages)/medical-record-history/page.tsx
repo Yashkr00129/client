@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { FileText } from "lucide-react";
 import { baseURL } from "@/config";
 import ocrResultApi from "@/api/ocrResult";
-import { OcrResultForMedicalRecord } from "@/lib/types"; // Assuming your types are in lib/types.ts
+import { OcrResultForMedicalRecord } from "@/lib/types";
 import { useRouter } from "next/navigation";
 
 const MedicalRecordsPage = () => {
@@ -97,21 +97,28 @@ const MedicalRecordsPage = () => {
 												{medicalRecords.map((record, index) => (
 													<tr key={index}>
 														<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-															{new Date(
-																record.document_ocr_data.consultation_date
-															).toLocaleDateString()}
+															{record.document_ocr_data?.consultation_date
+																? new Date(
+																		record.document_ocr_data.consultation_date
+																  ).toLocaleDateString()
+																: "N/A"}
 														</td>
 														<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-															{record.document_ocr_data.animal_info.species}
+															{record.document_ocr_data?.animal_info?.species ||
+																"N/A"}
 														</td>
 														<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-															{record.document_ocr_data.animal_info.weight}
+															{record.document_ocr_data?.animal_info?.weight ||
+																"N/A"}
 														</td>
 														<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-															{record.document_ocr_data.chief_complaint}
+															{record.document_ocr_data?.chief_complaint ||
+																"N/A"}
 														</td>
 														<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-															{record.document_ocr_data.diagnosis.join(", ")}
+															{record.document_ocr_data?.diagnosis?.join(
+																", "
+															) || "N/A"}
 														</td>
 														<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
 															<Button
