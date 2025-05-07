@@ -41,7 +41,7 @@ const ReceiptManagementPage = () => {
 			const res = await ocrRequestApi.getAllOcrRequests();
 
 			setReceipts(
-				res.data.items.filter((item: any) => item.type === "standard_document")
+				res.data.items.filter((item: any) => item.type === "medical_record")
 			);
 		} catch (err: any) {
 			setError(err.message || "Unknown error");

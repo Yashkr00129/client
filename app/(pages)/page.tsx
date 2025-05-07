@@ -162,7 +162,7 @@ const ReceiptUploader: React.FC = () => {
 	// Poll for receipt processing status
 	const pollForStatus = async (id: string): Promise<void> => {
 		try {
-			const response = await fetch(`${baseURL}/receipt-status/${id}`);
+			const response = await fetch(`${baseURL}/request-status/${id}`);
 
 			if (!response.ok) {
 				throw new Error(`Status check failed: ${response.statusText}`);
